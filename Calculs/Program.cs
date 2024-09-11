@@ -14,37 +14,27 @@ namespace Calculs
             int val1, val2; // mémorisation de nombres aléatoires
             int solution; // calcul de la solution
             int reponse; // saisie de la réponse de l'utilisateur
-            int choix; // saisie du choix de l'utilsiateur
+            string choix = ""; // saisie du choix de l'utilsiateur
 
             // boucle sur le menu
-            START:
-                choix = 1;
-                while (choix != 0)
-                {
-                    // affiche le menu et saisi le choix
-                    Console.WriteLine("Addition ....................... 1");
-                    Console.WriteLine("Multiplication ................. 2");
-                    Console.WriteLine("Quitter ........................ 0");
-                    Console.Write("Choix :                          ");
-                    try
-                    {
-                        choix = int.Parse(Console.ReadLine());
-                    }
-                    catch
-                    {
-                        Console.WriteLine("Veuillez entrer un nombre valide !");
-                        goto START;
-                    }
+            while (choix != "0")
+            {
+                // affiche le menu et saisi le choix
+                Console.WriteLine("Addition ....................... 1");
+                Console.WriteLine("Multiplication ................. 2");
+                Console.WriteLine("Quitter ........................ 0");
+                Console.Write("Choix :                          ");
+                choix = Console.ReadLine();
                 // traitement des choix
 
                 val1 = rand.Next(1, 10);
                 val2 = rand.Next(1, 10);
 
-                if (choix != 0)
+                if (choix != "0")
                 {
                     switch (choix)
                     {
-                        case 1:
+                        case "1":
                             // saisie de la réponse
                             reponse = 0;
                             while(reponse == 0)
@@ -71,7 +61,7 @@ namespace Calculs
                             }
                             break;
 
-                        case 2:
+                        case "2":
                             // saisie de la réponse
                             reponse = 0;
                             while(reponse == 0)
@@ -100,7 +90,7 @@ namespace Calculs
 
                         default:
                             Console.WriteLine("Veuillez entrer un nombre valide");
-                            goto START;
+                            break;
                     }
                 }
             }
