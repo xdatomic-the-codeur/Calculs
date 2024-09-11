@@ -36,14 +36,15 @@ namespace Calculs
                         goto START;
                     }
                 // traitement des choix
+
+                val1 = rand.Next(1, 10);
+                val2 = rand.Next(1, 10);
+
                 if (choix != 0)
                 {
                     switch (choix)
                     {
                         case 1:
-                            // choix de l'addition
-                            val1 = rand.Next(1, 10);
-                            val2 = rand.Next(1, 10);
                             // saisie de la réponse
                             reponse = 0;
                             while(reponse == 0)
@@ -71,9 +72,6 @@ namespace Calculs
                             break;
 
                         case 2:
-                            // choix de la multiplication
-                            val1 = rand.Next(1, 10);
-                            val2 = rand.Next(1, 10);
                             // saisie de la réponse
                             reponse = 0;
                             while(reponse == 0)
